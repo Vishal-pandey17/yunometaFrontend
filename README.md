@@ -1,16 +1,27 @@
-# React + Vite
+# Basic Task Manager (MERN)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+A simple Task Manager that lets you create, read, update and delete tasks. Tasks include a title, description and status, with optional filtering and pagination.
 
-Currently, two official plugins are available:
+## Tech Stack
+- Frontend: React 19 (Vite)
+- Backend: Node.js + Express 5, Mongoose 8
+- Database: MongoDB
+- Other: Axios, CORS, Nodemon, dotenv
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run Backend
+1. cd backend
+2. cp .env.example .env   # add MONGO_URI, PORT
+3. npm install
+4. npm start          # or nodemon index.js
 
-## React Compiler
+Server listens on `https://yunometa-backend.vercel.app/` and exposes:
+GET/POST/PUT/DELETE `/api/tasks`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run Frontend
+1. cd frontend
+2. npm install
+3. npm run dev
+4. Open Vite dev server URL (usually `https://yunometa-frontend-theta.vercel.app/`)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Update `src/services/api.js` if your backend runs on a different port.
