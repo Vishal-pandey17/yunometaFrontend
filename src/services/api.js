@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const API_URL = 'http://localhost:5000/api/tasks';
+const API_URL = 'https://yunometa-backend.vercel.app/api/tasks';
 
 export const getAllTasks = async (status = 'All', page = 1, limit = 10) => {
     const res = await axios.get(API_URL, {
